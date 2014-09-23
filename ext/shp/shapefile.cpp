@@ -301,7 +301,7 @@ VALUE shapefile::close(VALUE self)
 void shapefile::define(VALUE module)
 {
   shapefile::_klass = rb_define_class_under(module, "Shapefile", rb_cObject);
-  base::define(shapefile::_klass, false);
+  base<shapefile>::define(shapefile::_klass, false);
   rb_define_singleton_method(shapefile::_klass, "open", SHP_METHOD(shapefile::open), 2);
   rb_define_singleton_method(shapefile::_klass, "create", SHP_METHOD(shapefile::create), 2);
   rb_define_singleton_method(shapefile::_klass, "create_simple_object", SHP_METHOD(shapefile::create_simple_object), 5);
