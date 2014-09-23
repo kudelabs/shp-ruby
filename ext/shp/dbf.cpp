@@ -355,7 +355,7 @@ VALUE dbf::get_native_field_type(VALUE self, VALUE fieldIndex)
 void dbf::define(VALUE module)
 {
   dbf::_klass = rb_define_class_under(module, "DBF", rb_cObject);
-  base::define(dbf::_klass, false);
+  base<dbf>::define(dbf::_klass, false);
   rb_define_singleton_method(dbf::_klass, "create", SHP_METHOD(dbf::create), 1);
   rb_define_singleton_method(dbf::_klass, "open", SHP_METHOD(dbf::open), 2);
   rb_define_method(dbf::_klass, "add_field", SHP_METHOD(dbf::add_field), 4);
