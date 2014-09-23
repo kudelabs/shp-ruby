@@ -271,7 +271,7 @@ VALUE shape_object::get_m_max(VALUE self)
 void shape_object::define(VALUE module)
 {
   shape_object::_klass = rb_define_class_under(module, "ShapeObject", rb_cObject);
-  base::define(shape_object::_klass, false);
+  base<shape_object>::define(shape_object::_klass, false);
   rb_define_method(shape_object::_klass, "compute_extents", SHP_METHOD(shape_object::compute_extents), 0);
   rb_define_method(shape_object::_klass, "get_shape_type", SHP_METHOD(shape_object::get_shape_type), 0);
   rb_define_method(shape_object::_klass, "get_shape_id", SHP_METHOD(shape_object::get_shape_id), 0);
